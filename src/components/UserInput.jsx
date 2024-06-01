@@ -1,9 +1,3 @@
-import { calculateInvestmentResults } from '../util/investment.js';
-
-function UserInput() {
-  const investmentResults = calculateInvestmentResults(userInput);
-
-  console.log(' USERINPUT - investmentResults', investmentResults);
 function UserInput({ onChange, input }) {
 
   return (
