@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { calculateInvestmentResults } from '../util/investment.js';
 
 const INITIAL_INVESTMENT = {
   initialInvestment: 10000,
@@ -11,6 +12,10 @@ function UserInput() {
   const [userInput, setUserInput] = useState(INITIAL_INVESTMENT);
 
   const handleChange = (inputIdentifier, newValue) => setUserInput(prevInput => ({ ...prevInput, [inputIdentifier]: parseInt(newValue) }) );
+
+  const investmentResults = calculateInvestmentResults(userInput);
+
+  console.log(' USERINPUT - investmentResults', investmentResults);
 
   return (
     <section id="user-input">
