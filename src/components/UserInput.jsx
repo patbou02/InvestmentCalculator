@@ -1,15 +1,6 @@
-import { useState } from 'react';
 import { calculateInvestmentResults } from '../util/investment.js';
 
-const INITIAL_INVESTMENT = {
-  initialInvestment: 10000,
-  annualInvestment: 1200,
-  expectedReturn: 6,
-  duration: 10,
-}
-
 function UserInput() {
-  const [userInput, setUserInput] = useState(INITIAL_INVESTMENT);
 
   const handleChange = (inputIdentifier, newValue) => setUserInput(prevInput => ({ ...prevInput, [inputIdentifier]: parseInt(newValue) }) );
 
