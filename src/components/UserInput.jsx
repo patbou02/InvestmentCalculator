@@ -4,27 +4,28 @@ function UserInput() {
   const investmentResults = calculateInvestmentResults(userInput);
 
   console.log(' USERINPUT - investmentResults', investmentResults);
+function UserInput({ onChange, input }) {
 
   return (
     <section id="user-input">
       <div className="input-group">
         <p>
           <label htmlFor="investment">Initial Investment</label>
-          <input type="number" id="investment" value={userInput.initialInvestment} required onChange={e => handleChange('initialInvestment', e.target.value)} />
+          <input type="number" id="investment" value={input.initialInvestment} required onChange={e => onChange('initialInvestment', e.target.value)} />
         </p>
         <p>
           <label htmlFor="annual">Annual Investment</label>
-          <input type="number" id="annual" value={userInput.annualInvestment} required onChange={e => handleChange('annualInvestment', e.target.value)} />
+          <input type="number" id="annual" value={input.annualInvestment} required onChange={e => onChange('annualInvestment', e.target.value)} />
         </p>
       </div>
       <div className="input-group">
         <p>
           <label htmlFor="return">Expected Return</label>
-          <input type="number" id="return" value={userInput.expectedReturn} required onChange={e => handleChange('expectedReturn', e.target.value)} />
+          <input type="number" id="return" value={input.expectedReturn} required onChange={e => onChange('expectedReturn', e.target.value)} />
         </p>
         <p>
           <label htmlFor="duration">Duration</label>
-          <input type="number" id="duration" value={userInput.duration} required onChange={e => handleChange('duration', e.target.value)} />
+          <input type="number" id="duration" value={input.duration} required onChange={e => onChange('duration', e.target.value)} />
         </p>
       </div>
     </section>
