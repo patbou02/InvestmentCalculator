@@ -1,9 +1,6 @@
 import { calculateInvestmentResults } from '../util/investment.js';
 
 function UserInput() {
-
-  const handleChange = (inputIdentifier, newValue) => setUserInput(prevInput => ({ ...prevInput, [inputIdentifier]: parseInt(newValue) }) );
-
   const investmentResults = calculateInvestmentResults(userInput);
 
   console.log(' USERINPUT - investmentResults', investmentResults);

@@ -13,6 +13,9 @@ const INITIAL_INVESTMENT = {
 
 function App() {
   const [userInput, setUserInput] = useState(INITIAL_INVESTMENT);
+
+  const handleChange = (inputIdentifier, newValue) => setUserInput(prevInput => ({ ...prevInput, [inputIdentifier]: parseInt(newValue) }) );
+
   return (
     <>
       <Header />
