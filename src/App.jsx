@@ -14,13 +14,15 @@ const INITIAL_INVESTMENT = {
 function App() {
   const [userInput, setUserInput] = useState(INITIAL_INVESTMENT);
 
+  const inputIsValid = userInput.duration >= 1;
+
   const handleChange = (inputIdentifier, newValue) => setUserInput(prevInput => ({ ...prevInput, [inputIdentifier]: parseInt(newValue) }) );
 
   return (
     <>
       <Header />
       <UserInput onChange={handleChange} input={userInput} />
-      <Results input={userInput} />
+      {inputIsValid ? <Results input={userInput} /> : <p className="center">Please enter a duration greater than 0.</p>}
     </>
   )
 }
